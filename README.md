@@ -1,7 +1,5 @@
 # saapp
 
-https://github.com/andrewkimjoseph/plpfinalproject/blob/master/screenshots/flutter_02.png
-
 A new Flutter project.
 
 ## Getting Started
