@@ -107,7 +107,12 @@ HOSTING PLATFORM: **NONE (Find .apk file link at the top)**
 #### CHANGE PASSWORD FOR AGENT SCREEN:
 ![image](https://user-images.githubusercontent.com/91619206/193104780-bc08564b-eec2-4503-b041-2d75c497c5be.png)
 
+### AGENT END:
+#### AGENT LOGIN PAGE:
+![image](https://user-images.githubusercontent.com/91619206/193105504-7a28a330-89bb-4b3b-8c3a-51b3c12f7aad.png)
 
+#### CALCULATE LOAN SCREEN:
+![image](https://user-images.githubusercontent.com/91619206/193105548-f62cc3bd-db2e-498e-806c-2af930c46815.png)
 
 
 
