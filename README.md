@@ -51,7 +51,7 @@ HOSTING PLATFORM: **NONE (Find .apk file link at the top)**
 ### ADD CLIENT SCREEN:
 ![image](https://user-images.githubusercontent.com/91619206/193101997-26cec2d6-2b45-40af-8d0c-6bb134635f3e.png)
 
-### CLIENT DETAILS ADDED:
+### ADDING CLIENT DETAILS:
 ![image](https://user-images.githubusercontent.com/91619206/193102058-c5f733d3-db09-49a5-9445-5cffabf715e9.png)
 
 ### CONFIRMATION PROMPT FOR CLIENT DETAILS TO BE ADDED:
