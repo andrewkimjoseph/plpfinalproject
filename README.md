@@ -125,11 +125,32 @@ _A loan of 3,800,000 taken at 12% reducing balance interest for 5 years_
 ![image](https://user-images.githubusercontent.com/91619206/193106057-43a2a7cb-aca3-447f-bea7-0bdd25f66602.png)
 ![image](https://user-images.githubusercontent.com/91619206/193106096-cfbcb71f-003d-4717-b702-8ab6cb8a4692.png)
 
-#### CALCULATE LOAN SCREEN, ADDING FIGURES (EXAMPLE A):
+#### CALCULATE LOAN SCREEN, ADDING FIGURES (EXAMPLE B):
 ![image](https://user-images.githubusercontent.com/91619206/193106259-e4b67907-36fb-4f27-80c1-88d32ea51913.png)
 _A loan of 3,800,000 taken at 12% fixed interest for 5 years_
 
 #### RESULTS:
+![image](https://user-images.githubusercontent.com/91619206/193106582-8ccb9a42-ee70-4b54-aa90-9605bc57d71e.png)
+![image](https://user-images.githubusercontent.com/91619206/193106612-439bc276-ec67-49bf-90b9-b5c0d5046c5b.png)
+
+#### REFERRAL SCREEN:
+![image](https://user-images.githubusercontent.com/91619206/193106674-34f61049-ef21-4fd7-91ba-42458daa4c0f.png)
+
+#### ADDING REFERRAL:
+![image](https://user-images.githubusercontent.com/91619206/193106696-bc1bea81-5654-472a-b2cc-1057183ec9bf.png)
+
+#### CONFIRMATION PROMPT FOR ADDING REFERRAL:
+![image](https://user-images.githubusercontent.com/91619206/193106802-5505e9ec-abf8-4927-bef1-cc2f84112e83.png)
+
+### REFERRAL ADDED SUCCESSFULLY SNACKBAR:
+![image](https://user-images.githubusercontent.com/91619206/193106827-f53bf876-92f1-41e7-aa19-f96adfeff53d.png)
+
+### ALL REFERRAL ADDED SCREEN:
+![image](https://user-images.githubusercontent.com/91619206/193107029-887c3010-1409-412f-a242-ff5194eb122d.png)
+
+### PASSWORD SCREEN:
+![image](https://user-images.githubusercontent.com/91619206/193107099-9013469f-9e4b-4329-ad35-852c34646018.png)
+
 
 
 
