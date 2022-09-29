@@ -2,10 +2,8 @@
 
 
 #### SPLASH SCREEN ON NOKIA 6.1, ANDROID 10
-...
 ![image](https://user-images.githubusercontent.com/91619206/192979810-d3fe2837-110f-45ed-aeb3-b7648a7d388d.png)
-
-LINK TO .APK FILE FOR ANDROID INSTALLATION: https://bit.ly/3SfUZSV
+#### LINK TO .APK FILE FOR ANDROID INSTALLATION: https://bit.ly/3SfUZSV
 
 ## PROBLEM STATEMENT
 ...
