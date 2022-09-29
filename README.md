@@ -29,9 +29,9 @@ Yes. The work done on this prototype can be used to create a more complex, highl
 3. Adding and viewing referrals added by agents. In the app, a referral is anyone who is interested in taking a loan. Once an agent send their details, the client should continue the conversation with the referral.4. Generating loan repaymeny schedules for prospective borrowers. The loans can either be fixed interest or reducing balance interest.
 
 ## TECHNICAL REQUIREMENTS OF THE PROJECT
-PROGRAMMING LANGUAGE USED: **DART**
+PROGRAMMING LANGUAGE USED: **DART 2.18.2**
 
-FRAMEWORK USED: **FLUTTER**
+FRAMEWORK USED: **FLUTTER 3.3.3 **, ** FLUTTERFIRE **
 
 CODING ENVIRONMENT: **VISUAL STUDIO CODE**
 
