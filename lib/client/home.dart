@@ -120,6 +120,7 @@ class _HomeClient extends State<HomeClient> {
 
   // 2. THE REFERRAL SCREEN
   Widget _referralsScreen() {
+    getReferralData();
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
