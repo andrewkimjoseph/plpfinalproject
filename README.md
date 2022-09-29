@@ -111,8 +111,30 @@ HOSTING PLATFORM: **NONE (Find .apk file link at the top)**
 #### AGENT LOGIN PAGE:
 ![image](https://user-images.githubusercontent.com/91619206/193105504-7a28a330-89bb-4b3b-8c3a-51b3c12f7aad.png)
 
-#### CALCULATE LOAN SCREEN:
+#### AGENT LOGIN SUCCESSFUL SNACKBAR:
 ![image](https://user-images.githubusercontent.com/91619206/193105548-f62cc3bd-db2e-498e-806c-2af930c46815.png)
+
+#### CALCULATE LOAN SCREEN:
+![image](https://user-images.githubusercontent.com/91619206/193105782-c986d4f5-ea3d-4c30-a28d-a1891893f7e3.png)
+
+#### CALCULATE LOAN SCREEN, ADDING FIGURES (EXAMPLE A):
+![image](https://user-images.githubusercontent.com/91619206/193105865-3cd918a0-6207-4b12-a99b-7a54b2b88708.png)
+_A loan of 3,800,000 taken at 12% reducing balance interest for 5 years_
+
+##### RESULTS:
+![image](https://user-images.githubusercontent.com/91619206/193106057-43a2a7cb-aca3-447f-bea7-0bdd25f66602.png)
+![image](https://user-images.githubusercontent.com/91619206/193106096-cfbcb71f-003d-4717-b702-8ab6cb8a4692.png)
+
+#### CALCULATE LOAN SCREEN, ADDING FIGURES (EXAMPLE A):
+![image](https://user-images.githubusercontent.com/91619206/193106259-e4b67907-36fb-4f27-80c1-88d32ea51913.png)
+_A loan of 3,800,000 taken at 12% fixed interest for 5 years_
+
+#### RESULTS:
+
+
+
+
+
 
 
 
