@@ -101,7 +101,7 @@ HOSTING PLATFORM: **NONE (Find .apk file link at the top)**
 #### CONFIRM AGENT TO DELETE SCREEN:
 ![image](https://user-images.githubusercontent.com/91619206/193104237-c7e20a65-6bfe-4d61-86c3-ba0675bea24a.png)
 
-#### VIEW REFERRALS FOR AGENTS SCREEN:
+#### VIEW REFERRALS:
 ![image](https://user-images.githubusercontent.com/91619206/193108319-11da4783-b14f-430f-8b8b-48e55cb07227.png)
 
 #### VIEW ALL AGENTS SCREEN:
