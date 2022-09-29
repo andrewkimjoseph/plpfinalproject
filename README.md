@@ -101,7 +101,10 @@ HOSTING PLATFORM: **NONE (Find .apk file link at the top)**
 #### CONFIRM AGENT TO DELETE SCREEN:
 ![image](https://user-images.githubusercontent.com/91619206/193104237-c7e20a65-6bfe-4d61-86c3-ba0675bea24a.png)
 
-#### VIEW REFERRALS FOR CLIENTS (FROM ALL AGENTS) SCREEN:
+#### VIEW REFERRALS FOR AGENTS SCREEN:
+![image](https://user-images.githubusercontent.com/91619206/193108319-11da4783-b14f-430f-8b8b-48e55cb07227.png)
+
+#### VIEW ALL AGENTS SCREEN:
 ![image](https://user-images.githubusercontent.com/91619206/193104352-c9dc0d6d-9a11-4532-9763-180eb7aaad5e.png)
 
 #### CHANGE PASSWORD FOR AGENT SCREEN:
@@ -150,21 +153,3 @@ _A loan of 3,800,000 taken at 12% fixed interest for 5 years_
 
 ### PASSWORD SCREEN:
 ![image](https://user-images.githubusercontent.com/91619206/193107099-9013469f-9e4b-4329-ad35-852c34646018.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
