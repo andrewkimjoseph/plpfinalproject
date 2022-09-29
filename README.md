@@ -1,7 +1,7 @@
 # SAApp - Engage to Convert
 ![image](https://user-images.githubusercontent.com/91619206/192979810-d3fe2837-110f-45ed-aeb3-b7648a7d388d.png)
 _Figure 1: Splash screen of the app on Nokia 6.1 (Android 10)_
-###### LINK TO .APK FILE FOR ANDROID INSTALLATION: https://bit.ly/3SfUZSV
+### LINK TO .APK FILE FOR ANDROID INSTALLATION: https://bit.ly/3SfUZSV
 
 ## PROBLEM STATEMENT
 After engaging former and current sales agents of top loan-giving institutions in the country, I found out that 3 in every 5 of the agents are given generic loan repayment schedules to show prospective borrowers. Such a generic schedule looks like the one below:
