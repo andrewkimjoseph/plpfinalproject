@@ -69,7 +69,7 @@ class _LoginAgent extends State<LoginAgent> {
           content: SingleChildScrollView(
             child: ListBody(
               children: const <Widget>[
-                Text('INVALID REQUEST'),
+                Text('AGENT DOES NOT EXIST'),
               ],
             ),
           ),
@@ -242,7 +242,7 @@ class _LoginAgent extends State<LoginAgent> {
                       const SizedBox(height: 5),
                       Container(
                         height: 50,
-                        width: 100,
+                        width: 200,
                         decoration: BoxDecoration(
                             color: Colors.blue,
                             borderRadius: BorderRadius.circular(20)),

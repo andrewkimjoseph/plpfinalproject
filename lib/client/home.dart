@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'agents.dart';
 
 final newPassword = TextEditingController();
+var referralDataMapAllAgents = {};
 
 class HomeClient extends StatefulWidget {
   const HomeClient({super.key, required this.clientId});
@@ -99,58 +100,64 @@ class _HomeClient extends State<HomeClient> {
     );
   }
 
-  Future<Map<dynamic, dynamic>> getReferralData() async {
+  Future<Map<dynamic, dynamic>> getReferralDataForClient() async {
     final ref = FirebaseDatabase.instance.ref();
     final snapshot = await ref.child('referrals/${widget.clientId}').get();
-    Map? fetchedDataMap;
-    if (snapshot.exists) {
-      for (DataSnapshot agentSnapshots in snapshot.children) {
-        // for (DataSnapshot agentSnapshot in agentSnapshots.children) {
-        fetchedDataMap = agentSnapshots.value as Map;
-        fetchedDataMap.remove("referral_count");
-      }
-      referralDataMap = fetchedDataMap!;
-      return referralDataMap;
-    } else {
-      return {};
+    Map? fetchedDataMap = {};
+    for (DataSnapshot agentSnapshot in snapshot.children) {
+      fetchedDataMap.addAll(agentSnapshot.value as Map);
+      fetchedDataMap.remove("referral_count");
     }
+
+    referralDataMapAllAgents = fetchedDataMap;
+    return referralDataMapAllAgents;
   }
 
   // ------------------------------------------------------------- //
 
   // 2. THE REFERRAL SCREEN
+  //
   Widget _referralsScreen() {
-    getReferralData();
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            for (var refData in referralDataMap.values)
-              Padding(
-                padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                child: SizedBox(
-                  width: 500,
-                  height: 75,
-                  child: ListTile(
-                    leading:
-                        Image.asset('assets/images/saapp_icon.png', scale: 7),
-                    title: Text("REFERRAL NAME: ${refData['referral_name']}",
-                        style:
-                            const TextStyle(color: Colors.black, fontSize: 20)),
-                    subtitle: Text(
-                        "REFERRAL EMAIL:${refData['referral_email']}\nREFERRAL MOBILE: ${refData['referral_mobile']}",
-                        style:
-                            const TextStyle(color: Colors.black, fontSize: 15)),
-                  ),
-                ),
-              ),
-          ],
-        ),
-      ),
-    );
+        backgroundColor: Colors.white,
+        body: FutureBuilder(
+            future: getReferralDataForClient(),
+            builder: (context, AsyncSnapshot<Map<dynamic, dynamic>> snapshot) {
+              return snapshot.hasData
+                  ? SingleChildScrollView(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          for (var refData in referralDataMapAllAgents.values)
+                            Padding(
+                              padding:
+                                  const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                              child: SizedBox(
+                                width: 500,
+                                height: 75,
+                                child: ListTile(
+                                  leading: Image.asset(
+                                      'assets/images/saapp_icon.png',
+                                      scale: 7),
+                                  title: Text(
+                                      "REFERRAL NAME: ${refData['referral_name']}",
+                                      style: const TextStyle(
+                                          color: Colors.black, fontSize: 20)),
+                                  subtitle: Text(
+                                      "REFERRAL EMAIL:${refData['referral_email']}\nREFERRAL MOBILE: ${refData['referral_mobile']}",
+                                      style: const TextStyle(
+                                          color: Colors.black, fontSize: 15)),
+                                ),
+                              ),
+                            ),
+                        ],
+                      ),
+                    )
+                  : const Center(
+                      child: CircularProgressIndicator(),
+                    );
+            }));
   }
 
   Future<void> changeErrorSameCredentials() {
@@ -261,7 +268,6 @@ class _HomeClient extends State<HomeClient> {
   @override
   void initState() {
     super.initState();
-    getReferralData();
     _loadScreen();
   }
 
