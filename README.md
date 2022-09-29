@@ -42,34 +42,75 @@ HOSTING PLATFORM: **NONE (Find .apk file link at the top)**
 ### HOME PAGE:
 ![image](https://user-images.githubusercontent.com/91619206/192981335-584602e2-956d-4a67-9791-18164511de7f.png)
 
-### ADMIN LOGIN PAGE:
+### ADMIN (OR SAAPP END)
+#### ADMIN LOGIN PAGE:
 ![image](https://user-images.githubusercontent.com/91619206/193101314-8f2473a6-2940-4b63-a296-0274f4760cbb.png)
 
-### SUCCESSFUL LOGIN TO ADMIN PAGE:
+#### SUCCESSFUL LOGIN TO ADMIN PAGE:
 ![image](https://user-images.githubusercontent.com/91619206/193101479-5d7670c8-c544-413a-bacb-508163ff244f.png)
 
-### ADD CLIENT SCREEN:
+#### ADD CLIENT SCREEN:
 ![image](https://user-images.githubusercontent.com/91619206/193101997-26cec2d6-2b45-40af-8d0c-6bb134635f3e.png)
 
-### ADDING CLIENT DETAILS:
+#### ADDING CLIENT DETAILS:
 ![image](https://user-images.githubusercontent.com/91619206/193102058-c5f733d3-db09-49a5-9445-5cffabf715e9.png)
 
-### CONFIRMATION PROMPT FOR CLIENT DETAILS TO BE ADDED:
+#### CONFIRMATION PROMPT FOR CLIENT DETAILS TO BE ADDED:
 ![image](https://user-images.githubusercontent.com/91619206/193102148-3ad9cc6e-d8d8-4073-86ce-a41ea921269a.png)
 
-### CLIENT DETAILS ADDED SUCCESSFULLY SNACKBAR:
+#### CLIENT DETAILS ADDED SUCCESSFULLY SNACKBAR:
 ![image](https://user-images.githubusercontent.com/91619206/193102199-61a54944-3c46-48a6-8122-3c09168cf752.png)
 
-### ALL CLIENTS ADDED SCREEN:
+#### ALL CLIENTS ADDED SCREEN:
 ![image](https://user-images.githubusercontent.com/91619206/193102351-7490741c-7e94-4148-a00a-cd11d07324a1.png)
 
-### CLIENT DELETE SCREEN:
+#### CLIENT DELETE SCREEN:
 ![image](https://user-images.githubusercontent.com/91619206/193102399-58672e4c-54c2-42df-bede-f69fd8e2da71.png)
 
-### CONFIRMATION FOR CLIENT DETAILS TO BE DELETED:
-![image](https://user-images.githubusercontent.com/91619206/193102525-f5a13e66-0c54-4dc7-bd38-a6e7228e9974.png)
+#### CONFIRMATION FOR CLIENT DETAILS TO BE DELETED:
+![image](https://user-images.githubusercontent.com/91619206/193102790-7a5d7b19-7fdd-4d8d-8231-14b8fb48d4a3.png)
 
-### 
+#### PASSWORD CHANGING SCREEN
+![image](https://user-images.githubusercontent.com/91619206/193102849-e5e36f27-30e7-4bd5-9c85-270bfb8e25e1.png)
+
+### CLIENT END
+#### CLIENT LOGIN PAGE:
+![image](https://user-images.githubusercontent.com/91619206/193103580-a7e84988-e47f-4973-ba01-45a3b8c71b35.png)
+
+#### CLIENT LOGIN DETAILS ENTERED:
+![image](https://user-images.githubusercontent.com/91619206/193103616-aba6e696-6582-4537-a8d6-e02874cca31a.png)
+
+#### SUCCESSFUL CLIENT LOGIN PAGE:
+![image](https://user-images.githubusercontent.com/91619206/193103679-8bcb4204-b34a-4610-a007-15b70459de36.png)
+
+#### ADD AGENT SCREEN:
+![image](https://user-images.githubusercontent.com/91619206/193103774-12840c10-543a-4aad-9420-11ccd2f1dfc6.png)
+
+#### AGENT DETAILS BEING ADDED:
+![image](https://user-images.githubusercontent.com/91619206/193103829-c45fa752-3b79-4798-98cd-3ae498e35996.png)
+
+#### CONFIRMATION PROMPT FOR THE AGENT DETAILS BEING ADDED:
+![image](https://user-images.githubusercontent.com/91619206/193103984-bda18c9b-8d78-4747-a4b2-4d39d59dc98e.png)
+
+#### AGENT DETAILS ADDED SUCCESSFULLY:
+![image](https://user-images.githubusercontent.com/91619206/193104015-1e192d54-8a2d-46ee-a025-d0d82ab95698.png)
+
+#### DELETE AGENT SCREEN:
+![image](https://user-images.githubusercontent.com/91619206/193104124-3dec862d-2e5a-4d01-99a6-ec9e7fb610f5.png)
+
+#### CONFIRM AGENT TO DELETE SCREEN:
+![image](https://user-images.githubusercontent.com/91619206/193104237-c7e20a65-6bfe-4d61-86c3-ba0675bea24a.png)
+
+#### VIEW REFERRALS FOR CLIENTS (FROM ALL AGENTS) SCREEN:
+![image](https://user-images.githubusercontent.com/91619206/193104352-c9dc0d6d-9a11-4532-9763-180eb7aaad5e.png)
+
+
+
+
+
+
+
+
 
 
 
