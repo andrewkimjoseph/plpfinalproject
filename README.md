@@ -96,13 +96,19 @@ HOSTING PLATFORM: **NONE (Find .apk file link at the top)**
 ![image](https://user-images.githubusercontent.com/91619206/193104015-1e192d54-8a2d-46ee-a025-d0d82ab95698.png)
 
 #### DELETE AGENT SCREEN:
-![image](https://user-images.githubusercontent.com/91619206/193104124-3dec862d-2e5a-4d01-99a6-ec9e7fb610f5.png)
+![image](https://user-images.githubusercontent.com/91619206/193104701-2bc59592-8860-4ded-bbc8-11e3ce6f98b0.png)
 
 #### CONFIRM AGENT TO DELETE SCREEN:
 ![image](https://user-images.githubusercontent.com/91619206/193104237-c7e20a65-6bfe-4d61-86c3-ba0675bea24a.png)
 
 #### VIEW REFERRALS FOR CLIENTS (FROM ALL AGENTS) SCREEN:
 ![image](https://user-images.githubusercontent.com/91619206/193104352-c9dc0d6d-9a11-4532-9763-180eb7aaad5e.png)
+
+#### CHANGE PASSWORD FOR AGENT SCREEN:
+![image](https://user-images.githubusercontent.com/91619206/193104780-bc08564b-eec2-4503-b041-2d75c497c5be.png)
+
+
+
 
 
 
