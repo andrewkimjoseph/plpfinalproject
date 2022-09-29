@@ -1,5 +1,5 @@
 # SAApp - Engage to Convert
 
-A new Flutter project.
+screenshots/flutter_01.png
 
 ## What is 'SAApp' all about?
