@@ -21,9 +21,10 @@ Yes. The work done on this prototype can be used to create a more complex, highl
 
 ## PURPOSE OF THE PROJECT
 1. Adding, viewing, and deleting clients (loan-giving institutions).
+
 2. Adding, viewing, and deleting agents (who work for loan-giving institutions).
-3. Adding and viewing referrals added by agents. In the app, a referral is anyone who is interested in taking a loan. Once an agent send their details, the client should continue the conversation with the referral.
-4. Generating loan repaymeny schedules for prospective borrowers. The loans can either be fixed interest or reducing balance interest.
+
+3. Adding and viewing referrals added by agents. In the app, a referral is anyone who is interested in taking a loan. Once an agent send their details, the client should continue the conversation with the referral.4. Generating loan repaymeny schedules for prospective borrowers. The loans can either be fixed interest or reducing balance interest.
 
 ## TECHNICAL REQUIREMENTS OF THE PROJECT
 PROGRAMMING LANGUAGE USED: **DART**
