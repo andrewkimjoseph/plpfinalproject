@@ -48,5 +48,28 @@ HOSTING PLATFORM: **NONE (Find .apk file link at the top)**
 ### SUCCESSFUL LOGIN TO ADMIN PAGE:
 ![image](https://user-images.githubusercontent.com/91619206/193101479-5d7670c8-c544-413a-bacb-508163ff244f.png)
 
+### ADD CLIENT SCREEN:
+![image](https://user-images.githubusercontent.com/91619206/193101997-26cec2d6-2b45-40af-8d0c-6bb134635f3e.png)
+
+### CLIENT DETAILS ADDED:
+![image](https://user-images.githubusercontent.com/91619206/193102058-c5f733d3-db09-49a5-9445-5cffabf715e9.png)
+
+### CONFIRMATION PROMPT FOR CLIENT DETAILS TO BE ADDED:
+![image](https://user-images.githubusercontent.com/91619206/193102148-3ad9cc6e-d8d8-4073-86ce-a41ea921269a.png)
+
+### CLIENT DETAILS ADDED SUCCESSFULLY SNACKBAR:
+![image](https://user-images.githubusercontent.com/91619206/193102199-61a54944-3c46-48a6-8122-3c09168cf752.png)
+
+### ALL CLIENTS ADDED SCREEN:
+![image](https://user-images.githubusercontent.com/91619206/193102351-7490741c-7e94-4148-a00a-cd11d07324a1.png)
+
+### CLIENT DELETE SCREEN:
+![image](https://user-images.githubusercontent.com/91619206/193102399-58672e4c-54c2-42df-bede-f69fd8e2da71.png)
+
+### CONFIRMATION FOR CLIENT DETAILS TO BE DELETED:
+![image](https://user-images.githubusercontent.com/91619206/193102525-f5a13e66-0c54-4dc7-bd38-a6e7228e9974.png)
+
 ### 
+
+
 
