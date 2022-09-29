@@ -35,7 +35,7 @@ CODING ENVIRONMENT: **VISUAL STUDIO CODE**
 
 DATABASE SYSTEM: **FIREBASE REALTIME DATABASE (NoSQL)**
 
-HOSTING PLATFORM: NONE (Find .apk file link at the top)
+HOSTING PLATFORM: **NONE (Find .apk file link at the top)**
 
 ## HOW THE APPLICATION WORKS
 
@@ -43,4 +43,10 @@ HOSTING PLATFORM: NONE (Find .apk file link at the top)
 ![image](https://user-images.githubusercontent.com/91619206/192981335-584602e2-956d-4a67-9791-18164511de7f.png)
 
 ### ADMIN LOGIN PAGE:
+![image](https://user-images.githubusercontent.com/91619206/193101314-8f2473a6-2940-4b63-a296-0274f4760cbb.png)
+
+### SUCCESSFUL LOGIN TO ADMIN PAGE:
+![image](https://user-images.githubusercontent.com/91619206/193101479-5d7670c8-c544-413a-bacb-508163ff244f.png)
+
+### 
 
