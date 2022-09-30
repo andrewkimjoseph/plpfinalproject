@@ -17,7 +17,7 @@ Investopedia.com says: _Understanding the loan amortization schedule on a loan y
 
 When asked how well they agree with Investopedia.com, the agents said 100%. It is with those findings that I decided to start the development of SAApp (Sales Agents App).
 
-##### **Does the project have an economical or commercial benefit, and does it solve a problem?**
+### **Does the project have an economical or commercial benefit, and does it solve a problem?**
 
 Yes. The work done on this prototype can be used to create a more complex, highly-functional, and beautifully-looking app that loan-giving institutions can purchase. When they pay for the product and have their agents trained on how to use it effectively, they will increase their chances of selling their credit products. Based on the research done, using this product will give a loan-giving institution an 80% chance of getting a borrower, which is 8 in every 10 people that the agents talk to. Therefore, the problem of agents only being successful 40% of the time will be addressed by the app's capabilities.
 
