@@ -600,7 +600,7 @@ class _HomeAgent extends State<HomeAgent> {
         "EMI",
         "Total Interest",
         "Total Principal",
-        "Balance",
+        "Total Payment",
       ];
       loanRepaymentSchedule.add(totalsRecord);
       loanRepaymentSchedule.add(totalsRecordLabelsFooter);
@@ -641,7 +641,7 @@ class _HomeAgent extends State<HomeAgent> {
         ],
         ['Interest Type:', '$interestType Interest', " ", " ", " "],
         ['Yearly Rate:', '${(loanYearlyRate * 100)}%', "", "", "", ""],
-        ['Loan Period:', '$numberOfPeriods $year', " ", " ", " "],
+        ['Loan Period:', '$numberOfYears $year', " ", " ", " "],
         ['Months', 'EMI', 'Interest', 'Principal', 'Balance'],
         [0, " ", " ", " ", commaFormat.format(totalPayableAmount)],
       ];
@@ -684,7 +684,7 @@ class _HomeAgent extends State<HomeAgent> {
         "EMI",
         "Total Interest",
         "Total Principal",
-        "Balance",
+        "Total Payment",
       ];
       loanRepaymentSchedule.add(totalsRecord);
       loanRepaymentSchedule.add(totalsRecordLabelsFooter);
