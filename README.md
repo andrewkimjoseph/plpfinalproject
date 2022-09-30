@@ -39,7 +39,7 @@ DATABASE SYSTEM: **FIREBASE REALTIME DATABASE (NoSQL)**
 
 HOSTING PLATFORM: **NONE (Find .apk file link at the top)**
 
-LOGO DESIGN: ![image](https://user-images.githubusercontent.com/91619206/193109678-e79ee53e-37da-4481-a01e-ece35d7b05af.png)
+LOGO DESIGN: **CANVA**
 
 ## HOW THE APPLICATION WORKS
 ### LINK TO A VIDEO DEMONSTRATION OF HOW THE APP WORKS: https://drive.google.com/file/d/1rgGTqDBRo_p_MVxbcSUJl_ZYpBKjAkCb/view?usp=sharing
