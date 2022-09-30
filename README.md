@@ -6,6 +6,7 @@ _Figure 1: Splash screen of the app on Nokia 6.1 (Android 10)_
 ## PROBLEM STATEMENT
 After engaging former and current sales agents of top loan-giving institutions in the country, I found out that 3 in every 5 of the agents are given generic loan repayment schedules to show prospective borrowers. Such a generic schedule looks like the one below:
 ![image](https://user-images.githubusercontent.com/91619206/193109678-e79ee53e-37da-4481-a01e-ece35d7b05af.png)
+_Figure 2: Generic loan repayment schedule offered by a top loan-giving institution in the country_
 
 **However, the problem is that these generic schedules are only successful 40% of the time, since it is only 12 in 30 borrowers who actually take up a credit product.** That said, 86% of the agents agree that showing a loan repayment schedule to a client increases their chances of taking a loan, and, in this case, a specific one as opposed to the generic one you see above. Such a specific schedule looks like the one below:
 
