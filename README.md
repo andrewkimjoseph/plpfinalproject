@@ -40,6 +40,12 @@ CODING ENVIRONMENT: **VISUAL STUDIO CODE**
 
 DATABASE SYSTEM: **FIREBASE REALTIME DATABASE (NoSQL)**
 
+#### JSON DATABASE STRUCTURE:
+
+![image](https://user-images.githubusercontent.com/91619206/194077475-25fead6a-aabd-4588-891e-50b97d9ca48d.png)
+![image](https://user-images.githubusercontent.com/91619206/194077611-c247f333-b2e0-4fa7-a6de-a4036e0abf66.png)
+
+
 HOSTING PLATFORM: **NONE (Find .apk file link at the top)**
 
 LOGO DESIGN: **CANVA**
