@@ -45,6 +45,11 @@ CODING ENVIRONMENT: **VISUAL STUDIO CODE**
 
 DATABASE SYSTEM: **FIREBASE REALTIME DATABASE (NoSQL)**
 
+ENTITY RELATIONSHIP DIAGRAM:
+
+![image](https://user-images.githubusercontent.com/91619206/194575584-4d209b00-ad3d-45fa-94f4-a408bb21a7be.png)
+
+
 #### JSON DATABASE STRUCTURE:
 
 ![image](https://user-images.githubusercontent.com/91619206/194077475-25fead6a-aabd-4588-891e-50b97d9ca48d.png)
