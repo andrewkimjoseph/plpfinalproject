@@ -4,7 +4,12 @@ _Figure 1: Splash screen of the app on Nokia 6.1 (Android 10)_
 ### LINK TO .APK FILE FOR ANDROID INSTALLATION: https://bit.ly/3SfUZSV
 
 ## PROBLEM STATEMENT
-After engaging former and current sales agents of top loan-giving institutions in the country, I found out that 3 in every 5 of the agents are given generic loan repayment schedules to show prospective borrowers. Such a generic schedule looks like the one below:
+After engaging former and current sales agents of top loan-giving institutions in the country, I found out that 3 in every 5 (60%) of the agents are given generic loan repayment schedules to show prospective borrowers.
+
+![image](https://user-images.githubusercontent.com/91619206/194500213-9fb8a716-0764-407c-aec0-69fa84a159ba.png)
+
+Such a generic schedule looks like the one below:
+
 ![image](https://user-images.githubusercontent.com/91619206/193109678-e79ee53e-37da-4481-a01e-ece35d7b05af.png)
 _Figure 2: Generic loan repayment schedule offered by a top loan-giving institution in the country_
 
