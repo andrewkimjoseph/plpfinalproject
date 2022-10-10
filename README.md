@@ -1,5 +1,5 @@
 # SAApp - Engage to Convert
-## by Andrew Kim Joseph
+## By Andrew Kim Joseph
 
 ![image](https://user-images.githubusercontent.com/91619206/192979810-d3fe2837-110f-45ed-aeb3-b7648a7d388d.png)
 _Figure 1: Splash screen of the app on Nokia 6.1 (Android 10)_
