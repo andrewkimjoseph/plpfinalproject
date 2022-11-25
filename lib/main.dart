@@ -22,7 +22,7 @@ class SAApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         backgroundColor: Colors.white,
       ),
-      home: const Continue(title: '🏦 SAApp - Engage to Convert 👌'),
+      home: const Continue(title: '🏦 CrediTouch - Engage to Convert 👌'),
     );
   }
 }

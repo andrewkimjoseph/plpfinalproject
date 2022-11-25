@@ -417,7 +417,8 @@ class _HomeAgent extends State<HomeAgent> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             const SizedBox(height: 25),
-            Image.asset('assets/images/saapp_icon.png', scale: 3),
+            Image.asset('assets/images/saapp_icon.png', scale: 7),
+            const SizedBox(height: 15),
             Form(
               key: _formKey,
               child: Column(

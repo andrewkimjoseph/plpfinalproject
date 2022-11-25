@@ -128,7 +128,7 @@ class _LoginSAApp extends State<LoginSAApp> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
-                  Image.asset('assets/images/saapp_icon.png', scale: 3),
+                  Image.asset('assets/images/saapp_icon.png', scale: 5),
                   const Padding(
                     padding: EdgeInsets.only(top: 30),
                     child: Center(),

@@ -40,14 +40,8 @@ class _Continue extends State<Continue> {
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.max,
               children: <Widget>[
-                ColorFiltered(
-                    colorFilter: const ColorFilter.mode(
-                      Colors.white,
-                      BlendMode.modulate,
-                    ),
-                    child:
-                        Image.asset('assets/images/white-icon.png', scale: 6)),
-                const SizedBox(height: 15),
+                Image.asset('assets/images/saapp_icon.png', scale: 7),
+                const SizedBox(height: 25),
                 Text('Continue As\n⬇️',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.montserrat(
@@ -65,7 +59,7 @@ class _Continue extends State<Continue> {
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
-                              const LoginSAApp(title: 'SAApp Login')),
+                              const LoginSAApp(title: 'Admin Login')),
                     );
                   },
                   style: ElevatedButton.styleFrom(

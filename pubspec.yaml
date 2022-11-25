@@ -102,7 +102,7 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
 flutter_native_splash:
-  image: assets/images/splash_pic.png
+  image: assets/images/splash_screen.png
   color: "#2196f3"
 
 
@@ -114,7 +114,7 @@ flutter_icons:
   web:
     generate: true
     image_path: "assets/images/saapp_icon.png"
-    background_color: "#ffffff"
+    background_color: "#2196f3"
     theme_color: "#ffffff"
   windows:
     generate: true

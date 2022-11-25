@@ -49,7 +49,9 @@ class _HomeClient extends State<HomeClient> {
                   ),
                 ),
               ),
+              const SizedBox(height: 15),
               Image.asset('assets/images/saapp_icon.png', scale: 7),
+              const SizedBox(height: 15),
               Container(
                 height: 50,
                 width: 250,
@@ -71,7 +73,9 @@ class _HomeClient extends State<HomeClient> {
                   ),
                 ),
               ),
+              const SizedBox(height: 15),
               Image.asset('assets/images/saapp_icon.png', scale: 7),
+              const SizedBox(height: 15),
               Container(
                 height: 50,
                 width: 250,
@@ -215,7 +219,7 @@ class _HomeClient extends State<HomeClient> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Image.asset('assets/images/saapp_icon.png', scale: 3),
+          Image.asset('assets/images/saapp_icon.png', scale: 5),
           const SizedBox(height: 25),
           Form(
             key: _formKey,

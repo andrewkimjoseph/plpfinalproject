@@ -178,7 +178,8 @@ class _LoginAgent extends State<LoginAgent> {
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.max,
               children: <Widget>[
-                Image.asset('assets/images/saapp_icon.png', scale: 3),
+                Image.asset('assets/images/saapp_icon.png', scale: 7),
+                const SizedBox(height: 15),
                 Form(
                   key: _formKey,
                   child: Column(

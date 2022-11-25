@@ -188,7 +188,7 @@ class _LoginClient extends State<LoginClient> {
                     padding: EdgeInsets.only(top: 60.0),
                     child: Center(),
                   ),
-                  Image.asset('assets/images/saapp_icon.png', scale: 3),
+                  Image.asset('assets/images/saapp_icon.png', scale: 5),
                   const SizedBox(height: 25),
                   Padding(
                     padding: const EdgeInsets.only(
