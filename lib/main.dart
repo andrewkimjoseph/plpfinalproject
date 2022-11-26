@@ -9,15 +9,15 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const SAApp());
+  runApp(const CrediTouch());
 }
 
-class SAApp extends StatelessWidget {
-  const SAApp({super.key});
+class CrediTouch extends StatelessWidget {
+  const CrediTouch({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'The SAApp Platform',
+      title: 'CrediTouch',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         backgroundColor: Colors.white,
