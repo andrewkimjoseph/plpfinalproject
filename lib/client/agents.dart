@@ -3,10 +3,11 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
+import '../agent/home.dart';
+
 final agentId = TextEditingController();
 final agentPassword = TextEditingController();
 final agentName = TextEditingController();
-final agentGender = TextEditingController();
 final agentEmail = TextEditingController();
 final agentMobile = TextEditingController();
 
@@ -28,7 +29,6 @@ class _AddAgent extends State<AddAgent> {
     agentId.clear();
     agentPassword.clear();
     agentName.clear();
-    agentGender.clear();
     agentEmail.clear();
     agentMobile.clear();
   }
@@ -49,7 +49,6 @@ class _AddAgent extends State<AddAgent> {
         'agent_id': agentId.text,
         'agent_password': "0000",
         'agent_name': agentName.text,
-        'agent_gender': agentGender.text,
         'agent_email': agentEmail.text,
         'agent_mobile': agentMobile.text,
         'client_id': widget.clientId,
@@ -60,6 +59,7 @@ class _AddAgent extends State<AddAgent> {
       await updateRefCount
           .child('referrals/${widget.clientId}/${agentId.text}')
           .set({'referral_count': 0});
+
       clearData();
       return ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('AGENT ADDED SUCCESSFULLY')),
@@ -82,7 +82,6 @@ class _AddAgent extends State<AddAgent> {
               children: <Widget>[
                 Text('Agent ID: ${agentId.text}\n'),
                 Text('Agent Name: ${agentName.text}\n'),
-                Text('Agent Gender: ${agentGender.text}\n'),
                 Text('Agent Email: ${agentEmail.text}\n'),
                 Text('Agent Mobile: ${agentMobile.text}'),
               ],
@@ -119,150 +118,148 @@ class _AddAgent extends State<AddAgent> {
       appBar: AppBar(
         title: const Text('Client End'),
       ),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Center(
-            child: Form(
-              key: _formKey,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  const SizedBox(height: 25),
-                  SizedBox(
-                    width: 350.0,
-                    height: 75,
-                    child: TextFormField(
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Required';
-                        }
-                        return null;
-                      },
-                      controller: agentId,
-                      textAlign: TextAlign.left,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'AGENT ID',
-                      ),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("assets/images/grey-bg.jpg"),
+              fit: BoxFit.cover),
+        ),
+        child: Center(
+          child: SingleChildScrollView(
+            child: Center(
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    TextLabels.thickMontserrat('ADD AGENT', 35),
+                    const SizedBox(
+                      height: 25,
                     ),
-                  ),
-                  const SizedBox(height: 15),
-                  SizedBox(
-                    width: 350.0,
-                    height: 75,
-                    child: TextFormField(
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Required';
-                        }
-                        return null;
-                      },
-                      controller: agentName,
-                      textAlign: TextAlign.left,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'AGENT NAME',
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 15),
-                  SizedBox(
-                    width: 350,
-                    height: 75,
-                    child: TextFormField(
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Required';
-                        }
-                        return null;
-                      },
-                      controller: agentGender,
-                      textAlign: TextAlign.left,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'AGENT GENDER',
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 15),
-                  SizedBox(
-                    width: 350.0,
-                    height: 75,
-                    child: TextFormField(
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Required';
-                        }
-                        return null;
-                      },
-                      controller: agentEmail,
-                      textAlign: TextAlign.left,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'AGENT EMAIL',
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 15),
-                  SizedBox(
-                    width: 350.0,
-                    height: 75,
-                    child: TextFormField(
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Required';
-                        }
-                        return null;
-                      },
-                      controller: agentMobile,
-                      textAlign: TextAlign.left,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'AGENT MOBILE',
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 15),
-                  SizedBox(
-                    width: 350.0,
-                    height: 75,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            minimumSize: const Size(100, 50),
-                            maximumSize: const Size(100, 50),
-                          ),
-                          onPressed: () {
-                            if (_formKey.currentState!.validate()) {
-                              showAddAgentPrompt();
-                            }
-                          },
-                          child: const Text(
-                            'ADD',
-                            style: TextStyle(color: Colors.white, fontSize: 15),
-                            textAlign: TextAlign.center,
-                          ),
+                    Image.asset('assets/images/logo/saapp_icon.png', scale: 7),
+                    const SizedBox(height: 15),
+                    const SizedBox(height: 25),
+                    SizedBox(
+                      width: 350.0,
+                      height: 75,
+                      child: TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Required';
+                          }
+                          return null;
+                        },
+                        controller: agentId,
+                        textAlign: TextAlign.left,
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: 'AGENT ID',
                         ),
-                        const SizedBox(width: 15),
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            minimumSize: const Size(100, 50),
-                            maximumSize: const Size(100, 50),
-                          ),
-                          onPressed: clearData,
-                          child: const Text(
-                            'CLEAR FIELDS',
-                            style: TextStyle(color: Colors.white, fontSize: 15),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
-                  ),
-                ],
+                    const SizedBox(height: 15),
+                    SizedBox(
+                      width: 350.0,
+                      height: 75,
+                      child: TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Required';
+                          }
+                          return null;
+                        },
+                        controller: agentName,
+                        textAlign: TextAlign.left,
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: 'AGENT NAME',
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 15),
+                    SizedBox(
+                      width: 350.0,
+                      height: 75,
+                      child: TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Required';
+                          }
+                          return null;
+                        },
+                        controller: agentEmail,
+                        textAlign: TextAlign.left,
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: 'AGENT EMAIL',
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 15),
+                    SizedBox(
+                      width: 350.0,
+                      height: 75,
+                      child: TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Required';
+                          }
+                          return null;
+                        },
+                        controller: agentMobile,
+                        textAlign: TextAlign.left,
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: 'AGENT MOBILE',
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 15),
+                    SizedBox(
+                      width: 350.0,
+                      height: 75,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              minimumSize: const Size(100, 50),
+                              maximumSize: const Size(100, 50),
+                            ),
+                            onPressed: () {
+                              if (_formKey.currentState!.validate()) {
+                                showAddAgentPrompt();
+                              }
+                            },
+                            child: const Text(
+                              'ADD',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 15),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          const SizedBox(width: 15),
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              minimumSize: const Size(100, 50),
+                              maximumSize: const Size(100, 50),
+                            ),
+                            onPressed: clearData,
+                            child: const Text(
+                              'CLEAR FIELDS',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 15),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -363,52 +360,65 @@ class _DeleteAgent extends State<DeleteAgent> {
       appBar: AppBar(
         title: const Text('DELETE AGENT'),
       ),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Form(
-            key: _formKey,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                const SizedBox(height: 25),
-                Image.asset('assets/images/saapp_icon.png', scale: 3),
-                const SizedBox(height: 25),
-                SizedBox(
-                  width: 200.0,
-                  height: 75,
-                  child: TextFormField(
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Required';
-                      }
-                      return null;
-                    },
-                    controller: deleteAgentId,
-                    textAlign: TextAlign.left,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'e.g., PC001',
-                      labelText: 'ENTER AGENT ID',
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("assets/images/grey-bg.jpg"),
+              fit: BoxFit.cover),
+        ),
+        child: Center(
+          child: SingleChildScrollView(
+            child: Form(
+              key: _formKey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  TextLabels.thickMontserrat('DELETE AGENT', 35),
+                  const SizedBox(height: 25),
+                  Image.asset(
+                    'assets/images/logo/saapp_icon.png',
+                    scale: 2,
+                  ),
+                  const SizedBox(height: 25),
+                  SizedBox(
+                    width: 200.0,
+                    height: 75,
+                    child: TextFormField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Required';
+                        }
+                        return null;
+                      },
+                      controller: deleteAgentId,
+                      textAlign: TextAlign.left,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: 'e.g., PC001',
+                        labelText: 'ENTER AGENT ID',
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(height: 25),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(100, 50),
-                    maximumSize: const Size(200, 50),
+                  const SizedBox(height: 25),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(100, 50),
+                      maximumSize: const Size(200, 50),
+                    ),
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        showDeleteAgentPrompt();
+                      }
+                    },
+                    child: const Text(
+                      'DELETE AGENT',
+                      style: TextStyle(color: Colors.white, fontSize: 15),
+                    ),
                   ),
-                  onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      showDeleteAgentPrompt();
-                    }
-                  },
-                  child: const Text(
-                    'DELETE AGENT',
-                    style: TextStyle(color: Colors.white, fontSize: 15),
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
@@ -446,38 +456,56 @@ class _ViewAgent extends State<ViewAgent> {
         appBar: AppBar(
           title: const Text('ALL AGENTS'),
         ),
-        body: FutureBuilder(
-            future: getAgentData(),
-            builder: (context, AsyncSnapshot<Map<dynamic, dynamic>> snapshot) {
-              return snapshot.hasData
-                  ? SingleChildScrollView(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          for (var agentData in agentDataMap.values)
-                            Padding(
-                              padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-                              child: SizedBox(
-                                width: 500,
-                                height: 100,
-                                child: ListTile(
-                                  leading: Image.asset(
-                                      'assets/images/saapp_icon.png',
-                                      scale: 7),
-                                  title: Text(
-                                      "AGENT NAME: ${agentData['agent_name']}\nAGENT ID: [${agentData['agent_id']}]"),
-                                  subtitle: Text(
-                                      "REFERRAL COUNT: ${agentData['referral_count']}"),
+        body: Container(
+          height: double.infinity,
+          width: double.infinity,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/images/grey-bg.jpg"),
+                fit: BoxFit.cover),
+          ),
+          child: FutureBuilder(
+              future: getAgentData(),
+              builder:
+                  (context, AsyncSnapshot<Map<dynamic, dynamic>> snapshot) {
+                return snapshot.hasData
+                    ? SingleChildScrollView(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            const SizedBox(height: 25),
+                            TextLabels.thickMontserrat('AGENT PERFORMANCE', 35),
+                            const SizedBox(height: 25),
+                            Image.asset(
+                              'assets/images/logo/saapp_icon.png',
+                              scale: 5,
+                            ),
+                            const SizedBox(height: 25),
+                            for (var agentData in agentDataMap.values)
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                                child: SizedBox(
+                                  width: 500,
+                                  height: 75,
+                                  child: ListTile(
+                                    leading: Image.asset(
+                                        'assets/images/logo/saapp_icon.png',
+                                        scale: 7),
+                                    title: Text(
+                                        "AGENT NAME: ${agentData['agent_name']}\nAGENT ID: [${agentData['agent_id']}]"),
+                                    subtitle: Text(
+                                        "REFERRAL COUNT: ${agentData['referral_count']}"),
+                                  ),
                                 ),
                               ),
-                            ),
-                        ],
-                      ),
-                    )
-                  : const Center(
-                      child: CircularProgressIndicator(),
-                    );
-            }));
+                          ],
+                        ),
+                      )
+                    : const Center(
+                        child: CircularProgressIndicator(),
+                      );
+              }),
+        ));
   }
 }

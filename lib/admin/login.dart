@@ -2,6 +2,7 @@
 
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import '../agent/home.dart';
 import 'home.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -117,7 +118,7 @@ class _LoginSAApp extends State<LoginSAApp> {
         width: double.infinity,
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/blue-bg.jpg"),
+              image: AssetImage("assets/images/grey-bg.jpg"),
               fit: BoxFit.cover),
         ),
         child: Center(
@@ -128,7 +129,14 @@ class _LoginSAApp extends State<LoginSAApp> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
-                  Image.asset('assets/images/saapp_icon.png', scale: 5),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  TextLabels.thickMontserrat('ADMIN LOGIN', 35),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  Image.asset('assets/images/admin.png', scale: 3),
                   const Padding(
                     padding: EdgeInsets.only(top: 30),
                     child: Center(),
@@ -181,6 +189,8 @@ class _LoginSAApp extends State<LoginSAApp> {
                         color: Colors.blue,
                         borderRadius: BorderRadius.circular(20)),
                     child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blue),
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           validateLogins();
@@ -188,7 +198,7 @@ class _LoginSAApp extends State<LoginSAApp> {
                       },
                       child: const Text(
                         'Login',
-                        style: TextStyle(color: Colors.white, fontSize: 25),
+                        style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                     ),
                   ),

@@ -1,5 +1,6 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import '../agent/home.dart';
 import 'home.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -173,7 +174,7 @@ class _LoginClient extends State<LoginClient> {
         width: double.infinity,
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/blue-bg.jpg"),
+              image: AssetImage("assets/images/grey-bg.jpg"),
               fit: BoxFit.cover),
         ),
         child: Center(
@@ -184,11 +185,14 @@ class _LoginClient extends State<LoginClient> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
-                  const Padding(
-                    padding: EdgeInsets.only(top: 60.0),
-                    child: Center(),
+                  const SizedBox(
+                    height: 25,
                   ),
-                  Image.asset('assets/images/saapp_icon.png', scale: 5),
+                  TextLabels.thickMontserrat('CLIENT LOGIN', 35),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  Image.asset('assets/images/client.png', scale: 3),
                   const SizedBox(height: 25),
                   Padding(
                     padding: const EdgeInsets.only(
@@ -239,6 +243,8 @@ class _LoginClient extends State<LoginClient> {
                         color: Colors.blue,
                         borderRadius: BorderRadius.circular(20)),
                     child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blue),
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           validateClientLogin();
@@ -246,7 +252,7 @@ class _LoginClient extends State<LoginClient> {
                       },
                       child: const Text(
                         'Login',
-                        style: TextStyle(color: Colors.white, fontSize: 25),
+                        style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                     ),
                   ),

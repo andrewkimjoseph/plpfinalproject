@@ -3,6 +3,8 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
+import '../agent/home.dart';
+
 // GLOBAL DECLARATIONS
 final clientId = TextEditingController();
 final clientPassword = TextEditingController();
@@ -108,154 +110,173 @@ class _AddClient extends State<AddClient> {
       // resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('SAApp End'),
+        title: const Text('Admin End'),
       ),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Center(
-            child: Form(
-              key: _formKey,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  const SizedBox(height: 25),
-                  SizedBox(
-                    width: 350.0,
-                    height: 75,
-                    child: TextFormField(
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Required';
-                        }
-                        return null;
-                      },
-                      controller: clientId,
-                      textAlign: TextAlign.left,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'CLIENT ID',
-                      ),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("assets/images/grey-bg.jpg"),
+              fit: BoxFit.cover),
+        ),
+        child: Center(
+          child: SingleChildScrollView(
+            child: Center(
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    const SizedBox(
+                      height: 25,
                     ),
-                  ),
-                  const SizedBox(height: 15),
-                  SizedBox(
-                    width: 350.0,
-                    height: 75,
-                    child: TextFormField(
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Required';
-                        }
-                        return null;
-                      },
-                      controller: clientName,
-                      textAlign: TextAlign.left,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'CLIENT NAME',
-                      ),
+                    TextLabels.thickMontserrat('CLIENT ADD', 35),
+                    const SizedBox(
+                      height: 25,
                     ),
-                  ),
-                  const SizedBox(height: 15),
-                  SizedBox(
-                    width: 350,
-                    height: 75,
-                    child: TextFormField(
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Required';
-                        }
-                        return null;
-                      },
-                      controller: clientLocation,
-                      textAlign: TextAlign.left,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'CLIENT LOCATION',
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 15),
-                  SizedBox(
-                    width: 350.0,
-                    height: 75,
-                    child: TextFormField(
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Required';
-                        }
-                        return null;
-                      },
-                      controller: clientEmail,
-                      textAlign: TextAlign.left,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'CLIENT EMAIL',
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 15),
-                  SizedBox(
-                    width: 350.0,
-                    height: 75,
-                    child: TextFormField(
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Required';
-                        }
-                        return null;
-                      },
-                      controller: clientMobile,
-                      textAlign: TextAlign.left,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'CLIENT MOBILE',
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 15),
-                  SizedBox(
-                    width: 350.0,
-                    height: 75,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            minimumSize: const Size(100, 50),
-                            maximumSize: const Size(100, 50),
-                          ),
-                          onPressed: () {
-                            if (_formKey.currentState!.validate()) {
-                              showAddClientPrompt();
-                            }
-                          },
-                          child: const Text(
-                            'ADD CLIENT',
-                            style: TextStyle(color: Colors.white, fontSize: 15),
-                            textAlign: TextAlign.center,
-                          ),
+                    Image.asset('assets/images/client.png', scale: 4),
+                    const SizedBox(height: 15),
+                    SizedBox(
+                      width: 350.0,
+                      height: 75,
+                      child: TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Required';
+                          }
+                          return null;
+                        },
+                        controller: clientId,
+                        textAlign: TextAlign.left,
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: 'CLIENT ID',
                         ),
-                        const SizedBox(width: 25),
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            minimumSize: const Size(100, 50),
-                            maximumSize: const Size(100, 50),
-                          ),
-                          onPressed: () {
-                            clearData();
-                          },
-                          child: const Text(
-                            'CLEAR FIELDS',
-                            style: TextStyle(color: Colors.white, fontSize: 15),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
-                  ),
-                ],
+                    const SizedBox(height: 15),
+                    SizedBox(
+                      width: 350.0,
+                      height: 75,
+                      child: TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Required';
+                          }
+                          return null;
+                        },
+                        controller: clientName,
+                        textAlign: TextAlign.left,
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: 'CLIENT NAME',
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 15),
+                    SizedBox(
+                      width: 350,
+                      height: 75,
+                      child: TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Required';
+                          }
+                          return null;
+                        },
+                        controller: clientLocation,
+                        textAlign: TextAlign.left,
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: 'CLIENT LOCATION',
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 15),
+                    SizedBox(
+                      width: 350.0,
+                      height: 75,
+                      child: TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Required';
+                          }
+                          return null;
+                        },
+                        controller: clientEmail,
+                        textAlign: TextAlign.left,
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: 'CLIENT EMAIL',
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 15),
+                    SizedBox(
+                      width: 350.0,
+                      height: 75,
+                      child: TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Required';
+                          }
+                          return null;
+                        },
+                        controller: clientMobile,
+                        textAlign: TextAlign.left,
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: 'CLIENT MOBILE',
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 15),
+                    SizedBox(
+                      width: 350.0,
+                      height: 75,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              minimumSize: const Size(100, 50),
+                              maximumSize: const Size(100, 50),
+                            ),
+                            onPressed: () {
+                              if (_formKey.currentState!.validate()) {
+                                showAddClientPrompt();
+                              }
+                            },
+                            child: const Text(
+                              'ADD CLIENT',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 15),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          const SizedBox(width: 25),
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              minimumSize: const Size(100, 50),
+                              maximumSize: const Size(100, 50),
+                            ),
+                            onPressed: () {
+                              clearData();
+                            },
+                            child: const Text(
+                              'CLEAR FIELDS',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 15),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -347,54 +368,64 @@ class _DeleteClient extends State<DeleteClient> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('SAApp End'),
+        title: const Text('Admin End'),
       ),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Form(
-            key: _formKey,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                const SizedBox(height: 25),
-                SizedBox(
-                  width: 200.0,
-                  height: 100,
-                  child: TextFormField(
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Required';
-                      }
-                      return null;
-                    },
-                    controller: deleteClientId,
-                    textAlign: TextAlign.left,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'e.g., saapp_001',
-                      labelText: 'ENTER CLIENT ID',
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("assets/images/grey-bg.jpg"),
+              fit: BoxFit.cover),
+        ),
+        child: Center(
+          child: SingleChildScrollView(
+            child: Form(
+              key: _formKey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  TextLabels.thickMontserrat('DELETE CLIENT', 35),
+                  const SizedBox(height: 25),
+                  Image.asset('assets/images/client.png', scale: 3),
+                  const SizedBox(height: 25),
+                  const SizedBox(height: 25),
+                  SizedBox(
+                    width: 200.0,
+                    height: 100,
+                    child: TextFormField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Required';
+                        }
+                        return null;
+                      },
+                      controller: deleteClientId,
+                      textAlign: TextAlign.left,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: 'e.g., saapp_001',
+                        labelText: 'ENTER CLIENT ID',
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(height: 25),
-                Image.asset('assets/images/saapp_icon.png', scale: 3),
-                const SizedBox(height: 25),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(100, 50),
-                    maximumSize: const Size(100, 50),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(100, 50),
+                      maximumSize: const Size(100, 50),
+                    ),
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        showDeleteClientPrompt();
+                      }
+                    },
+                    child: const Text(
+                      'DELETE',
+                      style: TextStyle(color: Colors.white, fontSize: 15),
+                    ),
                   ),
-                  onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      showDeleteClientPrompt();
-                    }
-                  },
-                  child: const Text(
-                    'DELETE',
-                    style: TextStyle(color: Colors.white, fontSize: 15),
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
@@ -425,37 +456,69 @@ class _ViewClients extends State<ViewClients> {
       appBar: AppBar(
         title: const Text('ALL CLIENTS'),
       ),
-      body: FutureBuilder(
-        future: getClientData(),
-        builder: (context, AsyncSnapshot<Map<dynamic, dynamic>> snapshot) {
-          return snapshot.hasData
-              ? SingleChildScrollView(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      for (var clientData in clientDataMap.values)
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-                          child: SizedBox(
-                            width: 500,
-                            height: 100,
-                            child: ListTile(
-                              leading: Image.asset(
-                                  'assets/images/saapp_icon.png',
-                                  scale: 7),
-                              title: Text(
-                                  "CLIENT NAME: ${clientData['client_name']}\nCLIENT ID: [${clientData['client_id']}]"),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/images/grey-bg.jpg"),
+                fit: BoxFit.cover)),
+        child: FutureBuilder(
+          future: getClientData(),
+          builder: (context, AsyncSnapshot<Map<dynamic, dynamic>> snapshot) {
+            return snapshot.hasData
+                ? SingleChildScrollView(
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          const SizedBox(height: 25),
+                          TextLabels.thickMontserrat('ALL CLIENTS', 35),
+                          const SizedBox(height: 25),
+                          for (var clientData in clientDataMap.values)
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                              child: SizedBox(
+                                width: 500,
+                                height: 100,
+                                child: Card(
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: <Widget>[
+                                      ListTile(
+                                        leading: Image.asset(
+                                            'assets/images/person.png',
+                                            scale: 12),
+                                        // leading: const Icon(Icons.check),
+                                        title: Text(
+                                            "CLIENT NAME: ${clientData['client_name']}\nCLIENT ID: [${clientData['client_id']}]"),
+                                        // subtitle: Text(
+                                        //   "REFERRAL MOBILE: ${refData['referral_mobile']}",
+                                        //   style: const TextStyle(fontSize: 18),
+                                        // ),
+                                      ),
+                                      // TextLabels.thickMontserrat('Hey', 15)
+                                    ],
+                                  ),
+                                ),
+                                // ListTile(
+                                //   leading: Image.asset(
+                                //       'assets/images/logo/saapp_icon.png',
+                                //       scale: 7),
+                                //   title: Text(""),
+                                // ),
+                              ),
                             ),
-                          ),
-                        ),
-                    ],
-                  ),
-                )
-              : const Center(
-                  child: CircularProgressIndicator(),
-                );
-        },
+                        ],
+                      ),
+                    ),
+                  )
+                : const Center(
+                    child: CircularProgressIndicator(),
+                  );
+          },
+        ),
       ),
     );
   }

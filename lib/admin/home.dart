@@ -2,6 +2,7 @@
 
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import '../agent/home.dart';
 import 'clients.dart';
 
 final newId = TextEditingController();
@@ -19,81 +20,83 @@ class _HomeSAApp extends State<HomeSAApp> {
 
   // 1. THE CLIENT SCREEN
   Widget _clientScreen() {
-    return Scaffold(
-      body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.max,
-            children: <Widget>[
-              Container(
-                height: 50,
-                width: 250,
-                decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(20)),
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const AddClient()),
-                    );
-                  },
-                  child: const Text(
-                    'ADD CLIENT',
-                    style: TextStyle(color: Colors.white, fontSize: 25),
-                  ),
+    return Center(
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            TextLabels.thickMontserrat('CLIENT SCREEN', 35),
+
+            const SizedBox(height: 25),
+            Image.asset('assets/images/client.png', scale: 2),
+            const SizedBox(height: 25),
+            Container(
+              height: 50,
+              width: 250,
+              decoration: BoxDecoration(
+                  color: Colors.blue, borderRadius: BorderRadius.circular(20)),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const AddClient()),
+                  );
+                },
+                child: const Text(
+                  'ADD CLIENT',
+                  style: TextStyle(color: Colors.white, fontSize: 25),
                 ),
               ),
-              const SizedBox(height: 15),
-              Image.asset('assets/images/saapp_icon.png', scale: 9),
-              const SizedBox(height: 15),
-              Container(
-                height: 50,
-                width: 250,
-                decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(20)),
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const DeleteClient()),
-                    );
-                  },
-                  child: const Text(
-                    'DELETE CLIENT',
-                    style: TextStyle(color: Colors.white, fontSize: 25),
-                  ),
+            ),
+            const SizedBox(height: 15),
+            // Image.asset('assets/images/saapp_icon.png', scale: 9),
+            const SizedBox(height: 15),
+            Container(
+              height: 50,
+              width: 250,
+              decoration: BoxDecoration(
+                  color: Colors.blue, borderRadius: BorderRadius.circular(20)),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const DeleteClient()),
+                  );
+                },
+                child: const Text(
+                  'DELETE CLIENT',
+                  style: TextStyle(color: Colors.white, fontSize: 25),
                 ),
               ),
-              const SizedBox(height: 15),
-              Image.asset('assets/images/saapp_icon.png', scale: 9),
-              const SizedBox(height: 15),
-              Container(
-                height: 50,
-                width: 250,
-                decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(20)),
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const ViewClients()),
-                    );
-                  },
-                  child: const Text(
-                    'VIEW CLIENTS',
-                    style: TextStyle(color: Colors.white, fontSize: 25),
-                  ),
+            ),
+            const SizedBox(height: 15),
+            // Image.asset('assets/images/saapp_icon.png', scale: 9),
+            const SizedBox(height: 15),
+            Container(
+              height: 50,
+              width: 250,
+              decoration: BoxDecoration(
+                  color: Colors.blue, borderRadius: BorderRadius.circular(20)),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ViewClients()),
+                  );
+                },
+                child: const Text(
+                  'VIEW CLIENTS',
+                  style: TextStyle(color: Colors.white, fontSize: 25),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -153,73 +156,80 @@ class _HomeSAApp extends State<HomeSAApp> {
   // 2. CHANGE PASSWORD SCREEN
   Widget _changePasswordScreen() {
     return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Image.asset('assets/images/saapp_icon.png', scale: 7),
-          const SizedBox(height: 25),
-          Form(
-            key: _formKey,
-            child: Column(
-              children: [
-                SizedBox(
-                  width: 250,
-                  child: TextFormField(
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Required';
-                      }
-                      return null;
-                    },
-                    controller: newId,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'NEW ID',
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            const SizedBox(height: 25),
+            TextLabels.thickMontserrat('CHANGE ADMIN PASSWORD', 35),
+            const SizedBox(height: 15),
+            Image.asset('assets/images/admin.png', scale: 2),
+            const SizedBox(height: 25),
+            Form(
+              key: _formKey,
+              child: Column(
+                children: [
+                  SizedBox(
+                    width: 250,
+                    child: TextFormField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Required';
+                        }
+                        return null;
+                      },
+                      controller: newId,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'NEW ID',
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(height: 25),
-                SizedBox(
-                  width: 250,
-                  child: TextFormField(
-                    controller: newPassword,
-                    obscureText: true,
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Required';
-                      }
-                      return null;
-                    },
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'NEW PASSWORD',
+                  const SizedBox(height: 25),
+                  SizedBox(
+                    width: 250,
+                    child: TextFormField(
+                      controller: newPassword,
+                      obscureText: true,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Required';
+                        }
+                        return null;
+                      },
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'NEW PASSWORD',
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(height: 25),
-                Container(
-                  height: 50,
-                  width: 250,
-                  decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(20)),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      if (_formKey.currentState!.validate()) {
-                        changePassword();
-                      }
-                    },
-                    child: const Text(
-                      'CHANGE PASSWORD',
-                      style: TextStyle(color: Colors.white, fontSize: 15),
+                  const SizedBox(height: 25),
+                  Container(
+                    height: 50,
+                    width: 250,
+                    decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(20)),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blue),
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          changePassword();
+                        }
+                      },
+                      child: const Text(
+                        'CHANGE PASSWORD',
+                        style: TextStyle(color: Colors.white, fontSize: 15),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -247,7 +257,15 @@ class _HomeSAApp extends State<HomeSAApp> {
       appBar: AppBar(
         title: const Text('Admin End'),
       ),
-      body: _currentWidget,
+      body: Container(
+          height: double.infinity,
+          width: double.infinity,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/images/grey-bg.jpg"),
+                fit: BoxFit.cover),
+          ),
+          child: _currentWidget),
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
           onTap: (index) {

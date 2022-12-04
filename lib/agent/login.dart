@@ -9,7 +9,7 @@ TextEditingController agentIdController = TextEditingController();
 TextEditingController passwordController = TextEditingController();
 
 String enteredClientId =
-    'saapp_${String.fromCharCodes(clientIdController.text.trim().runes.toList().reversed)}';
+    'creditouch_${String.fromCharCodes(clientIdController.text.trim().runes.toList().reversed)}';
 
 class LoginAgent extends StatefulWidget {
   const LoginAgent({super.key, required this.title});
@@ -169,7 +169,7 @@ class _LoginAgent extends State<LoginAgent> {
         width: double.infinity,
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/blue-bg.jpg"),
+              image: AssetImage("assets/images/grey-bg.jpg"),
               fit: BoxFit.cover),
         ),
         child: Center(
@@ -178,8 +178,15 @@ class _LoginAgent extends State<LoginAgent> {
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.max,
               children: <Widget>[
-                Image.asset('assets/images/saapp_icon.png', scale: 7),
-                const SizedBox(height: 15),
+                const SizedBox(
+                  height: 25,
+                ),
+                TextLabels.thickMontserrat('AGENT LOGIN', 35),
+                const SizedBox(
+                  height: 25,
+                ),
+                Image.asset('assets/images/agent.png', scale: 3),
+                const SizedBox(height: 25),
                 Form(
                   key: _formKey,
                   child: Column(
@@ -240,7 +247,7 @@ class _LoginAgent extends State<LoginAgent> {
                       Checkbox(value: _isChecked, onChanged: _handleRememberMe),
                       const Text('Remember Me',
                           style: TextStyle(color: Colors.blue, fontSize: 15)),
-                      const SizedBox(height: 5),
+                      const SizedBox(height: 10),
                       Container(
                         height: 50,
                         width: 200,
@@ -248,6 +255,8 @@ class _LoginAgent extends State<LoginAgent> {
                             color: Colors.blue,
                             borderRadius: BorderRadius.circular(20)),
                         child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.blue),
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
                               validateAgentLogin();

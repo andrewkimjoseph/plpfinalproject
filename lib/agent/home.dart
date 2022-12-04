@@ -11,6 +11,9 @@ import 'package:csv/csv.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import 'schedule_chart.dart';
 
 List<String> interestRateOptions = ['Fixed', 'Reducing Balance'];
 var referralDataMap = {};
@@ -53,108 +56,123 @@ class _HomeAgent extends State<HomeAgent> {
     return Center(
       child: Form(
         key: _formKey,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: <Widget>[
-            SizedBox(
-              width: 250,
-              child: TextFormField(
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Required';
-                  }
-                  return null;
-                },
-                controller: loanAmountGiven,
-                keyboardType: TextInputType.number,
-                decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'LOAN AMOUNT',
-                    hintText: 'in KES'),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              TextLabels.thickMontserrat('LOAN REPAYMENT SCHEDULE', 35),
+              const SizedBox(height: 25),
+              Image.asset(
+                'assets/images/calc.png',
+                scale: 3,
               ),
-            ),
-            const SizedBox(height: 25),
-            SizedBox(
-              width: 250,
-              child: TextFormField(
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Required';
-                  }
-                  return null;
-                },
-                controller: loanYearlyRateGiven,
-                keyboardType: TextInputType.number,
-                decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'RATE',
-                    hintText: 'e.g. 12 to mean 12%'),
-              ),
-            ),
-            const SizedBox(height: 25),
-            SizedBox(
-              width: 250,
-              child: DropdownButtonFormField<String>(
-                icon: const Icon(Icons.arrow_downward),
-                elevation: 16,
-                style: const TextStyle(color: Colors.deepPurple),
-                value: dropdownValue,
-                items: interestRateOptions.map((String newValue) {
-                  return DropdownMenuItem<String>(
-                    value: newValue,
-                    child: Text(newValue),
-                  );
-                }).toList(),
-                onChanged: (String? value) {
-                  setState(() {
-                    dropdownValue = value!;
-                  });
-                },
-                onSaved: (String? value) {
-                  setState(() {
-                    dropdownValue = value!;
-                  });
-                },
-              ),
-            ),
-            const SizedBox(height: 25),
-            SizedBox(
-              width: 250,
-              child: TextFormField(
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Required';
-                  }
-                  return null;
-                },
-                controller: loanPeriodYearsGiven,
-                keyboardType: TextInputType.number,
-                decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'PERIOD',
-                    hintText: 'in YEARS (1, 2, 5, etc.)'),
-              ),
-            ),
-            const SizedBox(height: 25),
-            Container(
-              height: 50,
-              width: 250,
-              decoration: BoxDecoration(
-                  color: Colors.blue, borderRadius: BorderRadius.circular(20)),
-              child: ElevatedButton(
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    generateCSV(dropdownValue);
-                  }
-                },
-                child: const Text(
-                  'GENERATE LRS',
-                  style: TextStyle(color: Colors.white, fontSize: 15),
+              const SizedBox(height: 25),
+              SizedBox(
+                width: 250,
+                child: TextFormField(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Required';
+                    }
+                    return null;
+                  },
+                  controller: loanAmountGiven,
+                  keyboardType: TextInputType.number,
+                  decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'LOAN AMOUNT',
+                      hintText: 'in KES'),
                 ),
               ),
-            ),
-          ],
+              const SizedBox(height: 25),
+              SizedBox(
+                width: 250,
+                child: TextFormField(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Required';
+                    }
+                    return null;
+                  },
+                  controller: loanYearlyRateGiven,
+                  keyboardType: TextInputType.number,
+                  decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'RATE',
+                      hintText: 'e.g. 12 to mean 12%'),
+                ),
+              ),
+              const SizedBox(height: 25),
+              SizedBox(
+                width: 250,
+                child: DropdownButtonFormField<String>(
+                  icon: const Icon(Icons.arrow_downward),
+                  elevation: 16,
+                  style: const TextStyle(color: Color(0xFF2b334b)),
+                  value: dropdownValue,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'LOAN TYPE',
+                  ),
+                  items: interestRateOptions.map((String newValue) {
+                    return DropdownMenuItem<String>(
+                      value: newValue,
+                      child: Text(newValue),
+                    );
+                  }).toList(),
+                  onChanged: (String? value) {
+                    setState(() {
+                      dropdownValue = value!;
+                    });
+                  },
+                  onSaved: (String? value) {
+                    setState(() {
+                      dropdownValue = value!;
+                    });
+                  },
+                ),
+              ),
+              const SizedBox(height: 25),
+              SizedBox(
+                width: 250,
+                child: TextFormField(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Required';
+                    }
+                    return null;
+                  },
+                  controller: loanPeriodYearsGiven,
+                  keyboardType: TextInputType.number,
+                  decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'PERIOD',
+                      hintText: 'in YEARS (1, 2, 5, etc.)'),
+                ),
+              ),
+              const SizedBox(height: 25),
+              Container(
+                height: 50,
+                width: 250,
+                decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(20)),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      generateCSV(dropdownValue);
+                    }
+                  },
+                  child: const Text(
+                    'GENERATE LRS',
+                    style: TextStyle(color: Colors.white, fontSize: 15),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -175,7 +193,9 @@ class _HomeAgent extends State<HomeAgent> {
         'referral_mobile': referralMobile.text,
         'referral_email': referralEmail.text,
         'agent_id': widget.agentId,
-        'client_id': widget.clientId
+        'client_id': widget.clientId,
+        'referral_id': refReferral.key,
+        'referral_amount': 0
       });
       DatabaseReference agentReferrals = FirebaseDatabase.instance.ref();
       final snapshot = await agentReferrals
@@ -261,6 +281,10 @@ class _HomeAgent extends State<HomeAgent> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
+              TextLabels.thickMontserrat('REFERRAL DETAILS', 35),
+              const SizedBox(height: 25),
+              Image.asset('assets/images/refer.png', scale: 3),
+              const SizedBox(height: 25),
               const SizedBox(height: 25),
               SizedBox(
                 width: 250,
@@ -320,6 +344,7 @@ class _HomeAgent extends State<HomeAgent> {
                     color: Colors.blue,
                     borderRadius: BorderRadius.circular(20)),
                 child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
                       showAddReferralPrompt();
@@ -363,39 +388,53 @@ class _HomeAgent extends State<HomeAgent> {
           return snapshot.hasData
               ? SingleChildScrollView(
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
+                      const SizedBox(
+                        height: 25,
+                      ),
+                      TextLabels.thickMontserrat('LISTED REFERRALS', 35),
+                      const SizedBox(height: 15),
+                      Image.asset(
+                        'assets/images/referrals.png',
+                        scale: 5,
+                      ),
+                      // const SizedBox(height: 25),
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(10, 25, 10, 10),
+                        padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                         child: SizedBox(
                           width: 500,
-                          height: 25,
-                          child: Text(
-                            'REFERRAL COUNT: $displayedReferralCount',
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(fontSize: 25),
-                          ),
+                          height: 42,
+                          child: TextLabels.thickMontserrat(
+                              "REFERRAL COUNT: $displayedReferralCount", 30),
                         ),
                       ),
                       for (var refData in referralDataMap.values)
                         Padding(
                           padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                           child: SizedBox(
-                            width: 500,
-                            height: 75,
-                            child: ListTile(
-                              leading: Image.asset(
-                                  'assets/images/saapp_icon.png',
-                                  scale: 7),
-                              title: Text(
-                                  "REFERRAL NAME: ${refData['referral_name']}",
-                                  style: const TextStyle(
-                                      color: Colors.black, fontSize: 20)),
-                              subtitle: Text(
-                                  "REFERRAL EMAIL:${refData['referral_email']}\nREFERRAL MOBILE: ${refData['referral_mobile']}",
-                                  style: const TextStyle(
-                                      color: Colors.black, fontSize: 15)),
+                            width: 400,
+                            height: 81,
+                            child: Card(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: <Widget>[
+                                  ListTile(
+                                    leading: Image.asset(
+                                        'assets/images/person.png',
+                                        scale: 12),
+                                    // leading: const Icon(Icons.check),
+                                    title: Text(
+                                        "REFERRAL NAME: ${refData['referral_name']}"),
+                                    subtitle: Text(
+                                      "REFERRAL MOBILE: ${refData['referral_mobile']}",
+                                      style: const TextStyle(fontSize: 18),
+                                    ),
+                                  ),
+                                  // TextLabels.thickMontserrat('Hey', 15)
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -416,9 +455,10 @@ class _HomeAgent extends State<HomeAgent> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
+            TextLabels.thickMontserrat('CHANGE YOUR PASSWORD', 35),
             const SizedBox(height: 25),
-            Image.asset('assets/images/saapp_icon.png', scale: 7),
-            const SizedBox(height: 15),
+            Image.asset('assets/images/password.png', scale: 2),
+            const SizedBox(height: 25),
             Form(
               key: _formKey,
               child: Column(
@@ -466,6 +506,8 @@ class _HomeAgent extends State<HomeAgent> {
                         color: Colors.blue,
                         borderRadius: BorderRadius.circular(20)),
                     child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blue),
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           changePassword();
@@ -754,7 +796,7 @@ class _HomeAgent extends State<HomeAgent> {
 
   Widget displayScreen(String path, amount, years) {
     var commaFormat = NumberFormat("###,###,###", "en_US");
-    amount = int.parse(amount);
+    amount = double.parse(amount);
     years = int.parse(years);
     String year;
     if (years > 1) {
@@ -762,6 +804,10 @@ class _HomeAgent extends State<HomeAgent> {
     } else {
       year = 'YEAR';
     }
+    late int maxLoanYears;
+    late int totalPayableAmount;
+    late int totalPayablePrincipal;
+    late int totalPayableInterest;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -773,9 +819,51 @@ class _HomeAgent extends State<HomeAgent> {
       body: FutureBuilder(
         future: displayData(path),
         builder: (context, AsyncSnapshot<List<dynamic>> snapshot) {
-          return snapshot.hasData
-              ? SingleChildScrollView(
-                  child: Padding(
+          if (snapshot.hasData) {
+            int maxLoanYears = int.parse(snapshot.data!
+                .toList()[5][1]
+                .toString()
+                .replaceAll(' YEARS', ''));
+            // print(maxLoanYears);
+            int totalPayableAmount = int.parse(snapshot.data!
+                .toList()[1][1]
+                .toString()
+                .replaceAll('KES. ', '')
+                .replaceAll(',', ''));
+
+            // print(totalPayableAmount);
+
+            int totalPayablePrincipal = int.parse(snapshot.data!
+                .toList()[0][1]
+                .toString()
+                .replaceAll('KES. ', '')
+                .replaceAll(',', ''));
+            // print(totalPayablePrincipal);
+
+            int totalPayableInterest = int.parse(snapshot.data!
+                .toList()[2][1]
+                .toString()
+                .replaceAll('KES. ', '')
+                .replaceAll(',', ''));
+            // print(totalPayableInterest);
+            return SingleChildScrollView(
+              child: Column(
+                children: [
+                  const SizedBox(height: 25),
+                  TextLabels.thickMontserrat('LOAN REPAYMENT SCHEDULE', 35),
+                  // const SizedBox(height: 25),
+                  // Image.asset(
+                  //   'assets/images/saapp_icon.png',
+                  //   scale: 7,
+                  // ),
+                  const SizedBox(height: 25),
+                  DashPatternLineChart.withSampleData(
+                      maxLoanYears,
+                      totalPayableAmount,
+                      totalPayablePrincipal,
+                      totalPayableInterest),
+                  const SizedBox(height: 25),
+                  Padding(
                     padding: const EdgeInsets.all(8),
                     child: Column(
                       children: snapshot.data!
@@ -821,10 +909,14 @@ class _HomeAgent extends State<HomeAgent> {
                           .toList(),
                     ),
                   ),
-                )
-              : const Center(
-                  child: CircularProgressIndicator(),
-                );
+                ],
+              ),
+            );
+          } else {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
         },
       ),
     );
@@ -952,7 +1044,15 @@ class _HomeAgent extends State<HomeAgent> {
       appBar: AppBar(
         title: Text('Welcome, ${widget.agentId}!'),
       ),
-      body: _currentWidget,
+      body: Container(
+          height: double.infinity,
+          width: double.infinity,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/images/grey-bg.jpg"),
+                fit: BoxFit.cover),
+          ),
+          child: _currentWidget),
       bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           currentIndex: _currentIndex,
@@ -972,5 +1072,20 @@ class _HomeAgent extends State<HomeAgent> {
                 icon: Icon(Icons.password), label: 'Password'),
           ]),
     );
+  }
+}
+
+class TextLabels {
+  static Text thickMontserrat(String text, double fontSize) {
+    return Text(text,
+        textAlign: TextAlign.center,
+        style: GoogleFonts.montserrat(
+          textStyle: TextStyle(
+              color: const Color(0xFF2b334b),
+              // backgroundColor: Colors.blue,
+              letterSpacing: .5,
+              fontSize: fontSize,
+              fontWeight: FontWeight.w700),
+        ));
   }
 }
