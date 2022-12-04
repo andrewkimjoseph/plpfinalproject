@@ -139,7 +139,7 @@ class _AddAgent extends State<AddAgent> {
                     const SizedBox(
                       height: 25,
                     ),
-                    Image.asset('assets/images/logo/saapp_icon.png', scale: 7),
+                    Image.asset('assets/images/agent.png', scale: 7),
                     const SizedBox(height: 15),
                     const SizedBox(height: 25),
                     SizedBox(
@@ -378,7 +378,7 @@ class _DeleteAgent extends State<DeleteAgent> {
                   TextLabels.thickMontserrat('DELETE AGENT', 35),
                   const SizedBox(height: 25),
                   Image.asset(
-                    'assets/images/logo/saapp_icon.png',
+                    'assets/images/agent.png',
                     scale: 2,
                   ),
                   const SizedBox(height: 25),
@@ -475,10 +475,10 @@ class _ViewAgent extends State<ViewAgent> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
                             const SizedBox(height: 25),
-                            TextLabels.thickMontserrat('AGENT PERFORMANCE', 35),
+                            TextLabels.thickMontserrat('AGENTS', 35),
                             const SizedBox(height: 25),
                             Image.asset(
-                              'assets/images/logo/saapp_icon.png',
+                              'assets/images/agent.png',
                               scale: 5,
                             ),
                             const SizedBox(height: 25),
@@ -488,14 +488,26 @@ class _ViewAgent extends State<ViewAgent> {
                                 child: SizedBox(
                                   width: 500,
                                   height: 75,
-                                  child: ListTile(
-                                    leading: Image.asset(
-                                        'assets/images/logo/saapp_icon.png',
-                                        scale: 7),
-                                    title: Text(
-                                        "AGENT NAME: ${agentData['agent_name']}\nAGENT ID: [${agentData['agent_id']}]"),
-                                    subtitle: Text(
-                                        "REFERRAL COUNT: ${agentData['referral_count']}"),
+                                  child: Card(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: <Widget>[
+                                        ListTile(
+                                          leading: Image.asset(
+                                              'assets/images/person.png',
+                                              scale: 12),
+                                          // leading: const Icon(Icons.check),
+                                          title: Text(
+                                              "AGENT NAME: ${agentData['agent_name']}"),
+                                          subtitle: Text(
+                                            "REFERRAL COUNT: ${agentData['referral_count']}",
+                                            style:
+                                                const TextStyle(fontSize: 18),
+                                          ),
+                                        ),
+                                        // TextLabels.thickMontserrat('Hey', 15)
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),

@@ -151,17 +151,25 @@ class _HomeClient extends State<HomeClient> {
                             child: SizedBox(
                               width: 500,
                               height: 75,
-                              child: ListTile(
-                                leading: Image.asset('assets/images/person.png',
-                                    scale: 7),
-                                title: Text(
-                                    "REFERRAL NAME: ${refData['referral_name']}",
-                                    style: const TextStyle(
-                                        color: Colors.black, fontSize: 20)),
-                                subtitle: Text(
-                                    "REFERRAL EMAIL:${refData['referral_email']}\nREFERRAL MOBILE: ${refData['referral_mobile']}",
-                                    style: const TextStyle(
-                                        color: Colors.black, fontSize: 15)),
+                              child: Card(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: <Widget>[
+                                    ListTile(
+                                      leading: Image.asset(
+                                          'assets/images/person.png',
+                                          scale: 12),
+                                      // leading: const Icon(Icons.check),
+                                      title: Text(
+                                          "REFERRAL NAME: ${refData['referral_name']}"),
+                                      subtitle: Text(
+                                        "REFERRAL MOBILE: ${refData['referral_mobile']}",
+                                        style: const TextStyle(fontSize: 18),
+                                      ),
+                                    ),
+                                    // TextLabels.thickMontserrat('Hey', 15)
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -384,7 +392,7 @@ class _HomeClient extends State<HomeClient> {
         children: <Widget>[
           TextLabels.thickMontserrat('PASSWORD SCREEN', 35),
           const SizedBox(height: 25),
-          Image.asset('assets/images/logo/saapp_icon.png', scale: 5),
+          Image.asset('assets/images/client.png', scale: 3),
           const SizedBox(height: 25),
           Form(
             key: _formKey,
