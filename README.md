@@ -2,9 +2,9 @@
 ## By Andrew Kim Joseph
 
 
-_Figure 1: Splash screen of the app on Nokia 6.1 (Android 10)_
-![flutter_01](https://user-images.githubusercontent.com/91619206/205616917-fa92aab2-e446-4ca8-b4d6-bf8e24f046bc.png)
+![image](https://user-images.githubusercontent.com/91619206/205617432-5d07567e-f068-45d6-a8c8-6661428f32d8.png)
 
+_Figure 1: Splash screen of the app on Nokia X!0 (Android 12)_
 
 ## PURPOSE OF THE PROJECT
 1. Adding, viewing, and deleting clients (loan-giving institutions).
