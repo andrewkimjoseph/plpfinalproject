@@ -8,13 +8,14 @@ import 'switchboard/onboarding.dart';
 
 int? isViewed;
 void main() async {
-  // BEFORE APP LAUNCHES, CONNECTION TO THE FIREBASE DATABASE IS FIRST ESTABLISHED
+  // ONBOARDING SCREEN
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
   ));
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences prefs = await SharedPreferences.getInstance();
   isViewed = prefs.getInt('onBoard');
+  // BEFORE APP LAUNCHES, CONNECTION TO THE FIREBASE DATABASE IS FIRST ESTABLISHED
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

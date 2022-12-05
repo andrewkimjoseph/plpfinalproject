@@ -35,39 +35,38 @@ class _Continue extends State<Continue> {
               image: AssetImage("assets/images/grey-bg.jpg"),
               fit: BoxFit.cover),
         ),
-        child: Center(
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              mainAxisSize: MainAxisSize.max,
-              children: <Widget>[
-                Image.asset('assets/images/splash/splash_screen.png', scale: 1),
-                const SizedBox(height: 25),
-                TextLabels.thickMontserrat('CONTINUE AS:', 25),
-                const SizedBox(height: 25),
-                ContinueScreenButtons.continueScreenButton(
-                  particularIcon: Icons.manage_accounts,
-                  theContext: context,
-                  buttonText: "ADMIN",
-                  nextScreen: const LoginSAApp(title: 'Admin Login'),
-                ),
-                const SizedBox(height: 35),
-                ContinueScreenButtons.continueScreenButton(
-                  particularIcon: Icons.admin_panel_settings,
-                  theContext: context,
-                  buttonText: "CLIENT",
-                  nextScreen: const LoginClient(title: 'Client Login'),
-                ),
-                const SizedBox(height: 35),
-                ContinueScreenButtons.continueScreenButton(
-                  particularIcon: Icons.person_pin,
-                  theContext: context,
-                  buttonText: "AGENT",
-                  nextScreen: const LoginAgent(title: 'Agent Login'),
-                ),
-                const SizedBox(height: 35),
-              ],
-            ),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisSize: MainAxisSize.max,
+            children: <Widget>[
+              Image.asset('assets/images/splash/splash_screen.png', scale: 1),
+              const SizedBox(height: 25),
+              TextLabels.thickMontserrat('CONTINUE AS:', 25),
+              const SizedBox(height: 25),
+              ContinueScreenButtons.continueScreenButton(
+                particularIcon: Icons.manage_accounts,
+                theContext: context,
+                buttonText: "ADMIN",
+                nextScreen: const LoginSAApp(title: 'Admin Login'),
+              ),
+              const SizedBox(height: 50),
+              ContinueScreenButtons.continueScreenButton(
+                particularIcon: Icons.admin_panel_settings,
+                theContext: context,
+                buttonText: "CLIENT",
+                nextScreen: const LoginClient(title: 'Client Login'),
+              ),
+              const SizedBox(height: 50),
+              ContinueScreenButtons.continueScreenButton(
+                particularIcon: Icons.person_pin,
+                theContext: context,
+                buttonText: "AGENT",
+                nextScreen: const LoginAgent(title: 'Agent Login'),
+              ),
+              // const SizedBox(height: 40),
+              // Image.asset('assets/images/logo/saapp_icon.png', scale: 1),
+            ],
           ),
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
