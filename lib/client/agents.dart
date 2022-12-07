@@ -487,7 +487,7 @@ class _ViewAgent extends State<ViewAgent> {
                                 padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                                 child: SizedBox(
                                   width: 500,
-                                  height: 75,
+                                  height: 100,
                                   child: Card(
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,

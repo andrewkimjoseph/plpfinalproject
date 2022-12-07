@@ -415,7 +415,7 @@ class _HomeAgent extends State<HomeAgent> {
                           padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                           child: SizedBox(
                             width: 400,
-                            height: 81,
+                            height: 100,
                             child: Card(
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,

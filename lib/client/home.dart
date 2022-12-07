@@ -150,7 +150,7 @@ class _HomeClient extends State<HomeClient> {
                             padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                             child: SizedBox(
                               width: 500,
-                              height: 75,
+                              height: 110,
                               child: Card(
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
