@@ -149,7 +149,7 @@ class ContinueScreenWidgets {
                       context: theContext,
                       builder: (context) {
                         return PolicyDialog(
-                          mdFileName: 'terms_and_conditions.md',
+                          mdFileName: 'terms_of_service.md',
                         );
                       },
                     );

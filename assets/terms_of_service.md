@@ -6,9 +6,9 @@ Andrew Kim Joseph is committed to ensuring that the app is as useful and efficie
 
 The CrediTouch app stores and processes personal data that you have provided to us, to provide my Service. It’s your responsibility to keep your phone and access to the app secure. We therefore recommend that you do not jailbreak or root your phone, which is the process of removing software restrictions and limitations imposed by the official operating system of your device. It could make your phone vulnerable to malware/viruses/malicious programs, compromise your phone’s security features and it could mean that the CrediTouch app won’t work properly or at all.
 
-The app does use third-party services that declare their Terms and Conditions.
+The app does use third-party services that declare their Terms of Service.
 
-Link to Terms and Conditions of third-party service providers used by the app
+Link to Terms of Service of third-party service providers used by the app
 
 *   [Google Play Services](https://policies.google.com/terms)
 *   [Google Analytics for Firebase](https://firebase.google.com/terms/analytics)
@@ -24,12 +24,12 @@ With respect to Andrew Kim Joseph’s responsibility for your use of the app, wh
 
 At some point, we may wish to update the app. The app is currently available on Android – the requirements for the system(and for any additional systems we decide to extend the availability of the app to) may change, and you’ll need to download the updates if you want to keep using the app. Andrew Kim Joseph does not promise that it will always update the app so that it is relevant to you and/or works with the Android version that you have installed on your device. However, you promise to always accept updates to the application when offered to you, We may also wish to stop providing the app, and may terminate use of it at any time without giving notice of termination to you. Unless we tell you otherwise, upon any termination, (a) the rights and licenses granted to you in these terms will end; (b) you must stop using the app, and (if needed) delete it from your device.
 
-**Changes to This Terms and Conditions**
+**Changes to These Terms of Service**
 
-I may update our Terms and Conditions from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Terms and Conditions on this page.
+I may update our Terms of Service from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Terms of Service on this page.
 
-These terms and conditions are effective as of 2022-12-07
+These terms of Service are effective as of 2022-12-07
 
 **Contact Us**
 
-If you have any questions or suggestions about my Terms and Conditions, do not hesitate to contact me at andrewkimjoseph@gmail.com.
+If you have any questions or suggestions about my Terms of Service, do not hesitate to contact me at andrewkimjoseph@gmail.com.
